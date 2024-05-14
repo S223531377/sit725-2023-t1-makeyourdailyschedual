@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(rgba(202, 149, 33, 0.541), rgba(255, 255, 0, 0.582), rgba(129, 167, 41, 0.582));
+  /* background-image: url(logo1.png);
+  background-repeat: no-repeat; */
+}
+.bg{
+  /* background-color: transparent; */
+  margin-bottom: 15px;
+  background-image: url("logo1.png");
+  background-color: transparent;
+  height: 650px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.bginput{
+  border-bottom: solid black;
+  background-color: transparent;
+}
+.bgcard{
+  border: solid black;
+  background-color: transparent;
+}
+/* .card {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  padding: 10px;
+} */
+
+form > input,
+select,
+button {
+  margin: 5px 0;
+}
