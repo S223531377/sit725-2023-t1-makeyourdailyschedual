@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
     await task.save();
     res.redirect("/tasks");
   } catch {
-    res.status(400).send({ error: "Failed to add task" });
+    res.status(400).send({ error: "Task is not uploaded" });
   }
 });
 
@@ -32,12 +32,12 @@ router.delete('/delete/:id', async (req, res) => {
     try {
         const result = await Task.findByIdAndDelete(req.params.id);
         if (!result) {
-            return res.status(404).send('Task not found');
+            return res.status(404).send('Not Found');
         }
         res.redirect('/tasks');  // Redirect or handle the response as needed
     } catch (error) {
         console.error("Failed to delete task:", error);
-        res.status(500).send("Error deleting task.");
+        res.status(500).send("Error occur in deleting.");
     }
 });
 
@@ -49,7 +49,7 @@ router.get('/edit/:id', async (req, res) => {
         res.render('edit_task', { task: task }); // Assumes you have an 'edit_task.ejs' view file for the edit form
     } catch (error) {
         console.log(error);
-        res.status(500).send("Failed to find the task.");
+        res.status(500).send("Task is not Found");
     }
 });
 
@@ -65,7 +65,7 @@ router.post('/update/:id', async (req, res) => {
         res.redirect('/tasks');
     } catch (error) {
         console.log(error);
-        res.status(400).send("Failed to update the task.");
+        res.status(400).send("Task is not updated");
     }
 });
 
