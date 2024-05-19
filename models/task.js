@@ -1,19 +1,19 @@
 const mongoose = require("mongoose");
 
 const taskSchema = new mongoose.Schema({
-  username: {
+  name: {
     type: String,
     required: true,
   },
-  taskdescription: {
+  description: {
     type: String,
     required: true,
   },
-  duedatetime: {
+  datetime: {
     type: Date,
     required: true,
   },
-  tasktype: {
+  type: {
     type: String,
     required: true,
     enum: ["Priority", "Normal"],
